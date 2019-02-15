@@ -1,0 +1,22 @@
+<div>
+    <h4>Identifiez vous pour modifier votre inventaire !</h4>
+    <video #videoElement autoplay muted="muted"></video>
+    <canvas id="c" style="display:none;" width="300" height="300" ></canvas>
+
+
+    <mat-form-field *ngIf="videoHere" >
+        <mat-select placeholder="Qui etes vous?" (selectionChange)="selectedUser($event.value);">
+            <mat-option  *ngFor="let user of allUsers" [value]="user.id"> {{user.nom}} {{user.prenom}} </mat-option>
+        </mat-select>
+    </mat-form-field>
+
+
+    <button (click)="takeSnap()" *ngIf="videoHere ; else notVideoYet">Acceder a l'entrepot</button>
+    <hr>
+    <p>Projet etudiant realisee a l'EPSI de Montpellier en 2019 / Utilise les technologies d'Amazon.</p>
+</div> 
+
+<ng-template #notVideoYet>
+    <mat-spinner [diameter]="50" style="display: block; margin: auto;"></mat-spinner>
+    <p>En attente de camera</p>
+</ng-template>

@@ -1,0 +1,32 @@
+<div>
+  <div id="header">
+    <div>
+ <h1>Welcome to your inventory</h1>
+    <p>{{user.prenom}} {{user.nom}}</p>
+    </div>
+    <div>
+      <div><img width="100%" height="auto" [src]="dataImg" id="takenImg"></div>
+    </div>
+   
+  </div>
+
+  <div id="body">
+    <h3>Select today's instruments</h3>
+    <div >
+      <div *ngFor="let instru of instruments" id="checkboxMat"  >
+        <div *ngIf="userHaveItem(instru.id)" [ngClass]="instru.quantity != 0  ? 'canSelectInstru':'cantSelectInstru'">
+            <input type="checkbox"  id="{{instru.id}}" value="{{instru.name}}" (change)="modif($event , instru);" checked>
+            <label for="">{{instru.name}} </label>
+        </div>
+
+          
+          <div  *ngIf="!userHaveItem(instru.id)" [ngClass]="instru.quantity != 0  ? 'canSelectInstru':'cantSelectInstru'">
+            <input type="checkbox"  id="{{instru.id}}" (change)="modif($event , instru);" value="{{instru.name}}">
+            <label for="">{{instru.name}} </label>
+          </div>
+      </div>
+      
+    </div>
+  </div>
+  <p id="decon" (click)="destroySes();">Deconnexion</p>
+</div>

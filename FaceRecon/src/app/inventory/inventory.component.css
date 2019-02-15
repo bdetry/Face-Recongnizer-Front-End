@@ -1,0 +1,198 @@
+div{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;    
+}
+
+div  div#header{
+    width: 60vw;
+    padding-top: 5vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-bottom:  solid 1px #379EC1;    
+}
+
+div  div#header div:nth-child(2){
+    width: 30%;  
+    padding: 1rem;
+    box-sizing: border-box;
+}
+
+div div#header h1{
+    margin: 0;
+    padding: 0;
+    color: #999;
+    text-align: left;
+    width: 100%;
+    font-weight: 500;
+    font-size: 2rem;
+}
+
+div div#header p{
+    margin: 0;
+    padding: 0;
+    color: #666;
+    text-align: left;
+    width: 100%;
+    padding-top: 1vh;
+    padding-bottom: 3vh;      
+    font-size: 1.6rem;
+}
+
+div div#body{
+    width: 60vw;
+}
+
+div div:nth-child(2) h3{
+    margin: 0;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+    color: #379EC1;
+    text-align: left;
+    width: 100%;
+    font-size: 1.3rem;
+}
+
+div div:nth-child(2) div{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+
+#checkboxMat{
+    
+    min-width: 30%;
+    max-width: 33%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    padding:0.5rem;
+    font-size: 1.2rem;
+    color: rgb(102, 102, 102);
+    font-weight: bold;
+}
+
+.canSelectInstru {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: nowrap;
+    background-color: #fefefe;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px #666;
+    padding: 0.5rem;
+    text-align: center;
+    overflow: hidden;   
+}
+
+.cantSelectInstru {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: nowrap;
+    background-color: #999;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px #666;
+    padding: 0.5rem;
+    text-align: center;
+    overflow: hidden;   
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+
+.canSelectInstru input[type=checkbox]{
+    position: relative;
+    width: 20px;
+    height: 20px;
+}
+
+.canSelectInstru input[type=checkbox]:hover{
+    cursor: pointer;    
+}
+
+.canSelectInstru label:hover{
+    cursor: pointer;
+}
+
+.canSelectInstru input[type=checkbox]:after{
+    background-color: #379EC1; 
+    content: '  ';
+    display: inline-block;
+    visibility: visible;
+    width: 19px;
+    height: 19px;
+    top: 0;
+    left: 0;
+    opacity: 0.5;
+    border-radius: 5px;   
+}
+
+.cantSelectInstru input[type=checkbox]{
+    position: relative;
+    width: 20px;
+    height: 20px;
+}
+
+.cantSelectInstru input[type=checkbox]:hover{
+    
+    cursor: not-allowed;  
+}
+
+.cantSelectInstru label:hover{
+    
+    cursor: not-allowed;
+}
+
+.cantSelectInstru input[type=checkbox]:after{
+    background-color: #379EC1; 
+    content: '  ';
+    display: inline-block;
+    visibility: visible;
+    width: 19px;
+    height: 19px;
+    top: 0;
+    left: 0;
+    opacity: 0.5;
+    border-radius: 5px;   
+}
+
+#decon{
+    margin-top: 2vh;
+    color: rgb(131, 30, 30);
+    text-decoration: underline;
+}
+
+#decon:hover{
+    cursor: pointer;
+}
+
+
+@media all and (max-width : 750px){
+    div  div#header div:nth-child(2){
+        width: 70%;  
+        padding: 1rem;
+        box-sizing: border-box;
+    }
+
+    div  div#header{
+        width: 90vw;}
+
+        div div#body{
+            width: 90vw;
+        }
+
+
+}
